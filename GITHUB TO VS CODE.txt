@@ -1,0 +1,121 @@
+#HOW TO TAKE PROJECT FROM GITHUB AND MAKE CHANGES AND PUBLISH AGIAN#
+Steps:
+1)first create folder with name git 
+2)then change terminial path using cd
+3)copy the https link of repo
+4)write (git clone URL) enter 
+5)go in repo using cd command
+6)chake status using (git status)
+
+
+PS C:\Users\ASUS\Desktop> cd git
+PS C:\Users\ASUS\Desktop\git> git clone https://github.com/Adityakhupase/codesofttask3.git
+Cloning into 'codesofttask3'...
+remote: Enumerating objects: 9, done.
+remote: Counting objects: 100% (9/9), done.
+remote: Compressing objects: 100% (7/7), done.
+remote: Total 9 (delta 0), reused 0 (delta 0), pack-reused 0
+Receiving objects: 100% (9/9), done.
+PS C:\Users\ASUS\Desktop\git> cd codesofttask3
+PS C:\Users\ASUS\Desktop\git\codesofttask3> pwd
+
+Path
+----
+C:\Users\ASUS\Desktop\git\codesofttask3
+
+
+PS C:\Users\ASUS\Desktop\git\codesofttask3> ls -a
+Get-ChildItem : Parameter cannot be processed because the parameter name 'a' is ambiguous. Possible matches include: -Attributes
+-Directory -File -Hidden -ReadOnly -System.
+At line:1 char:4
++ ls -a
++    ~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-ChildItem], ParameterBindingException
+    + FullyQualifiedErrorId : AmbiguousParameter,Microsoft.PowerShell.Commands.GetChildItemCommand
+
+PS C:\Users\ASUS\Desktop\git\codesofttask3> git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+
+
+7)here i enter some text in README.md file and again chake status
+
+PS C:\Users\ASUS\Desktop\git\codesofttask3> git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+8)here i add new file ak.html
+
+PS C:\Users\ASUS\Desktop\git\codesofttask3> git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.md
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        ak.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+9)now i want to make same change on my github repo
+#so first i am use add 
+ 
+PS C:\Users\ASUS\Desktop\git\codesofttask3> git add ak.html
+PS C:\Users\ASUS\Desktop\git\codesofttask3> git status     
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   ak.html
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.md
+
+10)(git add.) for add all new fiels 
+PS C:\Users\ASUS\Desktop\git\codesofttask3> git add .      
+PS C:\Users\ASUS\Desktop\git\codesofttask3> git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   README.md
+        new file:   ak.html
+#after that commit command
+PS C:\Users\ASUS\Desktop\git\codesofttask3> git commit -m"add info"
+[main 72df4eb] add info
+ 2 files changed, 2 insertions(+), 1 deletion(-)
+ create mode 100644 ak.html
+PS C:\Users\ASUS\Desktop\git\codesofttask3> git status
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+11)finally push command
+PS C:\Users\ASUS\Desktop\git\codesofttask3> git push origin main
+Enumerating objects: 6, done.
+Counting objects: 100% (6/6), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (4/4), 439 bytes | 439.00 KiB/s, done.
+Total 4 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/Adityakhupase/codesofttask3.git
+   f076165..72df4eb  main -> main
